@@ -23,4 +23,15 @@ public class QualityFormController {
         return allForms;
     }
 
+//    @PostMapping("/forms")
+//    public void create(@RequestBody QualityForm qualityForm) {
+//        allForms.add(qualityForm);
+//    }
+
+    @PostMapping("/new-form")
+    public ResponseEntity<String> addQualityForm() {
+        allForms.add(new QualityForm(4, 95.0, "Great job!"));
+        return ResponseEntity.ok("Quality form added successfully!");
+    }
+
 }
