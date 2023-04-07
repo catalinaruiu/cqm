@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @RestController
 public class QualityFormController {
@@ -30,8 +33,16 @@ public class QualityFormController {
 
     @PostMapping("/new-form")
     public ResponseEntity<String> addQualityForm() {
-        allForms.add(new QualityForm(4, 95.0, "Great job!"));
+        allForms.add(new QualityForm(allForms.size() + 1, 95.0, "Great job!"));
         return ResponseEntity.ok("Quality form added successfully!");
     }
 
+    @DeleteMapping("/forms/{id}")
+    public void deleteQualityForm(@PathVariable int id) {
+        Map<Integer, QualityForm> formsMap = allForms.stream()
+                .collect(Collectors.toMap(QualityForm::getId, Function.identity()));
+        formsMap.remove(id);
+        allForms.clear();
+        allForms.addAll(formsMap.values());
+    }
 }
