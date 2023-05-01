@@ -5,12 +5,14 @@ public class QualityForm {
     private double score;
     private String comment;
     private String agentName;
+    private int callDuration;
 
-    public QualityForm(int id, double score, String comment, String agentName) {
+    public QualityForm(int id, double score, String comment, String agentName, int callDuration) {
         this.id = id;
         this.score = score;
         this.comment = comment;
         this.agentName = agentName;
+        this.callDuration = callDuration;
     }
 
     public int getId() {
@@ -43,5 +45,13 @@ public class QualityForm {
 
     public void setAgentName(String agentName) {
         this.agentName = agentName;
+    }
+
+    public int getCallDuration() {
+        return callDuration;
+    }
+
+    public void setCallDuration(int callDuration) {
+        this.callDuration = callDuration;
     }
 }

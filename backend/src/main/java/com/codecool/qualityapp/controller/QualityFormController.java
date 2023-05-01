@@ -13,9 +13,9 @@ public class QualityFormController {
 
     public QualityFormController() {
         // Initialize the list with some QualityForm objects
-        allForms.add(new QualityForm(1, 88.5, "Nicely done!", "Ada"));
-        allForms.add(new QualityForm(2, 67.2, "Needs improvement.", "John"));
-        allForms.add(new QualityForm(3, 99.0, "Excellent work!", "Jane"));
+        allForms.add(new QualityForm(1, 88.5, "Nicely done!", "Ada", 157));
+        allForms.add(new QualityForm(2, 67.2, "Needs improvement.", "John", 634));
+        allForms.add(new QualityForm(3, 99.0, "Excellent work!", "Jane", 873));
     }
 
     @GetMapping
