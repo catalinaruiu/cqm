@@ -1,13 +1,13 @@
 package com.codecool.qualityapp.model;
 
-public class QualityForm {
+public class Evaluation {
     private int id;
     private double score;
     private String comment;
     private String agentName;
     private int callDuration;
 
-    public QualityForm(int id, double score, String comment, String agentName, int callDuration) {
+    public Evaluation(int id, double score, String comment, String agentName, int callDuration) {
         this.id = id;
         this.score = score;
         this.comment = comment;
