@@ -11,13 +11,6 @@ import java.util.List;
 public class EvaluationController {
     private List<Evaluation> allForms = new ArrayList<>();
 
-    public EvaluationController() {
-        // Initialize the list with some Evaluation objects
-        allForms.add(new Evaluation(1, 88.5, "Nicely done!", "Ada", 157));
-        allForms.add(new Evaluation(2, 67.2, "Needs improvement.", "John", 634));
-        allForms.add(new Evaluation(3, 99.0, "Excellent work!", "Jane", 873));
-    }
-
     @GetMapping
     public List<Evaluation> getQualityForms() {
         return allForms;
