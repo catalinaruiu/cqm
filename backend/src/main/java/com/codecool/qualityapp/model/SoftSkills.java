@@ -1,8 +1,13 @@
 package com.codecool.qualityapp.model;
 
+import jakarta.persistence.*;
+
+@Embeddable
 public class SoftSkills {
     private byte empathy;
     private byte furtherAssistance;
+
+    public SoftSkills() {}
 
     public SoftSkills(byte empathy, byte furtherAssistance) {
         this.empathy = empathy;

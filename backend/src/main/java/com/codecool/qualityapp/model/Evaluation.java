@@ -1,23 +1,44 @@
 package com.codecool.qualityapp.model;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "evaluations")
 public class Evaluation {
-    private long id;
+    @Id
+    @SequenceGenerator(
+            name = "evaluation_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            generator = "evaluation_sequence",
+            strategy = GenerationType.SEQUENCE
+    )
+    private Long id;
     private EvaluationType type;
+    @ManyToOne
     private User agentName;
     private Date callDate;
     private int callDuration;
     private Date evaluationDate;
+    @ManyToOne
     private User evaluator;
+    @Embedded
     private SoftSkills softSkills;
+    @Embedded
     private CommunicationSkills communicationSkills;
+    @Embedded
     private TechnicalSkills technicalSkills;
+    @Embedded
     private ToolsUsage toolsUsage;
     private double score;
     private String comment;
     private boolean acknowledged;
     private String agentComment;
+
+    public Evaluation() {}
 
     public Evaluation(EvaluationType type,
                       User agentName,

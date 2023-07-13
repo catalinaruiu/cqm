@@ -1,5 +1,8 @@
 package com.codecool.qualityapp.model;
 
+import jakarta.persistence.*;
+
+@Embeddable
 public class CommunicationSkills {
     private byte opening;
     private byte activeListening;
@@ -8,6 +11,8 @@ public class CommunicationSkills {
     private byte holdProcedure;
     private byte language;
     private byte closing;
+
+    public CommunicationSkills() {}
 
     public CommunicationSkills(byte opening,
                                byte activeListening,

@@ -1,8 +1,13 @@
 package com.codecool.qualityapp.model;
 
+import jakarta.persistence.*;
+
+@Embeddable
 public class TechnicalSkills {
     private byte troubleshootingOrder;
     private byte troubleshootingCompletion;
+
+    public TechnicalSkills() {}
 
     public TechnicalSkills(byte troubleshootingOrder, byte troubleshootingCompletion) {
         this.troubleshootingOrder = troubleshootingOrder;
