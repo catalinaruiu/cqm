@@ -23,6 +23,7 @@ public class User {
     private String project;
     private Position position;
     private String password;
+    private boolean active;
     @OneToMany(mappedBy = "agentName", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Evaluation> agentEvaluations;
     @OneToMany(mappedBy = "evaluator", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -88,6 +89,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public List<Evaluation> getAgentEvaluations() {
