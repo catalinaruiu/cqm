@@ -1,9 +1,13 @@
+import UsersTable from "./components/UsersTable";
+import EvaluationsTable from "./components/EvaluationsTable";
+
 function App() {
-  return (
-    <div>
-      display
-    </div>
-  );
+	return (
+		<div>
+      <UsersTable />
+      <EvaluationsTable />
+		</div>
+	);
 }
 
 export default App;
